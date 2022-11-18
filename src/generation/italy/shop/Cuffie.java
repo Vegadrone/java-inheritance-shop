@@ -3,13 +3,14 @@ package generation.italy.shop;
 public class Cuffie extends Prodotto {
 	
 	private boolean isWireless;
-	private String color;
+	private boolean isCablato;
+	private String colore;
 	
-	public Cuffie (String nome, String marca, int prezzo, boolean isWireless, String color) {
+	public Cuffie (String nome, String marca, int prezzo, boolean isWireless, boolean isCablato, String colore) {
 		super(nome, marca, prezzo);
 		
 		this.isWireless = isWireless;
-		this.color = color;
+		this.colore = colore;
 	}
 
 	public boolean isWireless() {
@@ -21,11 +22,18 @@ public class Cuffie extends Prodotto {
 	}
 
 	public String getColor() {
-		return color;
+		return colore;
 	}
 
-	public void setColor(String color) {
-		this.color = color;
+	public void setColor(String colore) {
+		this.colore = colore;
 	}
 	
+	@Override
+	public String toString() {
+		
+		return super.toString() + "\nColore: " + colore
+								+ "\nWireless: " + isWireless
+								+ "\nCon cavo: " + isCablato;
+	}
 }
